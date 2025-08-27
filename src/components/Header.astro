@@ -1,0 +1,44 @@
+---
+import HomeIcon from "@icons/HomeIcon.astro";
+import ItemMenu from "./ItemMenu.astro";
+import ProjectsIcon from "@icons/ProjectsIcon.astro";
+import AboutIcon from "@icons/AboutIcon.astro";
+import ContactIcon from "@icons/ContactIcon.astro";
+---
+
+<header
+  class="flex items-center justify-between pt-10 pb-5 bg-[#121212] sticky top-0"
+>
+  <a
+    href="/"
+    class="flex items-center gap-2 font-bold text-white text-shadow-2xs text-shadow-gray-500/10"
+  >
+    <img
+      src="/images/code.png"
+      alt="Logo de RodrisDev"
+      class="w-[20px] h-[20px]"
+    />
+    Rodris
+  </a>
+
+  <nav>
+    <ul class="flex items-center gap-5">
+      <ItemMenu href="/" label="Inicio">
+        <HomeIcon />
+        Inicio
+      </ItemMenu>
+      <ItemMenu href="/projects" label="Proyectos">
+        <ProjectsIcon />
+        Proyectos
+      </ItemMenu>
+      <ItemMenu href="/about" label="Acerca de">
+        <AboutIcon />
+        Acerca de
+      </ItemMenu>
+      <ItemMenu href="/contact" label="Contacto">
+        <ContactIcon />
+        Contacto
+      </ItemMenu>
+    </ul>
+  </nav>
+</header>
