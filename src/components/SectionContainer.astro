@@ -3,7 +3,7 @@ import NextIcon from "@icons/NextIcon.astro";
 
 interface Props {
   title: string;
-  href: string;
+  href: string | null;
 }
 
 const { title, href } = Astro.props;
@@ -17,13 +17,17 @@ const { title, href } = Astro.props;
       <span>#</span>
       {title}
     </h2>
-    <a
-      href={href}
-      class="flex items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 cursor-pointer"
-    >
-      Ver más
-      <NextIcon />
-    </a>
+    {
+      href && (
+        <a
+          href={href}
+          class="flex items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 cursor-pointer"
+        >
+          Ver más
+          <NextIcon />
+        </a>
+      )
+    }
   </div>
   <slot />
 </section>
