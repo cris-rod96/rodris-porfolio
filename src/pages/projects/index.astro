@@ -1,5 +1,22 @@
 ---
+import { PROJECTS } from "@data/index";
 import Layout from "@layouts/Layout.astro";
+
+const webProjects = PROJECTS.filter(
+  (project) => project.platform === "Web" && project.category === "Profesional"
+);
+
+const mobileProjects = PROJECTS.filter(
+  (project) => project.platform === "Móvil"
+);
+
+const personalProjects = PROJECTS.filter(
+  (project) => project.category === "Personal"
+);
+
+console.log(personalProjects);
 ---
 
-<Layout title="RodrisDev - Proyectos" />
+<Layout title="RodrisDev - Proyectos">
+  <h1>Hi world</h1>
+</Layout>

@@ -17,6 +17,7 @@
       "@styles/*": ["src/styles/*"],
       "@pages/*": ["src/pages/*"],
       "@layouts/*": ["src/layouts/*"],
+      "@data/*": ["src/data/*"]
 
     }
   }

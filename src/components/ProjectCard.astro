@@ -1,0 +1,103 @@
+---
+import EyeIcon from "@icons/EyeIcon.astro";
+import GithubIcon from "@icons/GithubIcon.astro";
+import LinkIcon from "@icons/LinkIcon.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  link: string | null;
+  github: string;
+  image: string | null;
+  tags: any[];
+}
+
+const { title, description, link, github, image, tags } = Astro.props;
+---
+
+<article
+  class="rounded-md border border-gray-500/20 flex flex-col overflow-hidden group hover:shadow-2xs hover:shadow-gray-500/20 transition-all duration-300"
+>
+  <header
+    class="w-full h-[250px] relative overflow-hidden flex justify-center items-center"
+  >
+    <img
+      src={image || "/images/process.png"}
+      alt={image ? `Imagen del proyecto: ${title}` : "Proyecto en proceso"}
+      class={`w-full h-full object-cover group-hover:scale-105 transition-all duration-300 ${!image && "blur-xl"}`}
+    />
+    {
+      !image && (
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-transparent"></div>
+<h2 class="absolute text-white text-2xl font-bold">
+  🧑‍💻 Proyecto en proceso 🧑‍💻
+</h2>
+      )
+    }
+  </header>
+
+  <div class="px-5 py-3">
+    <h3 class="text-white font-bold text-lg">{title}</h3>
+    {/* Techs */}
+    <div class="flex items-center gap-2 mt-5 flex-wrap">
+      {
+        tags.map((tag) => {
+          const { icon: Icon, name } = tag;
+          return (
+            <span class="flex items-center gap-2 px-5 py-1 rounded-md bg-gray-500/20 text-white border border-gray-500/20 text-sm">
+              <Icon />
+              {name}
+            </span>
+          );
+        })
+      }
+    </div>
+    {/* Descripción del proyecto */}
+    <p class="mt-5 text-gray-400 font-light">
+      {
+        description.length > 200
+          ? description.slice(0, 200) + "..."
+          : description
+      }
+    </p>
+
+    {/* Links */}
+    <div class="flex mt-10 items-center gap-2">
+      {
+        link && (
+          <a
+            href={link}
+            target="_blank"
+            class="flex items-center px-3 py-1 bg-gray-500/10 text-gray-400 hover:text-white transition-all duration-300 cursor-pointer gap-1 border border-gray-500/20 rounded-md"
+            rel="noopener noreferrer"
+          >
+            <LinkIcon />
+            Preview
+          </a>
+        )
+      }
+      {
+        github && (
+          <a
+            href={github}
+            target="_blank"
+            class="flex items-center px-3 py-1 bg-gray-500/10 text-gray-400 hover:text-white transition-all duration-300 cursor-pointer gap-1 border border-gray-500/20 rounded-md"
+            rel="noopener noreferrer"
+          >
+            <GithubIcon />
+            Código
+          </a>
+        )
+      }
+
+      <a
+        href="/projects/1"
+        class="flex items-center px-3 py-1 bg-gray-500/10 text-gray-400 hover:text-white transition-all duration-300 cursor-pointer gap-1 border border-gray-500/20 rounded-md"
+        rel="noopener noreferrer"
+      >
+        <EyeIcon />
+        Ver más
+      </a>
+    </div>
+  </div>
+</article>
