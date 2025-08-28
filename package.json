@@ -9,7 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/node": "^9.4.3",
     "@astrojs/react": "^4.3.0",
+    "@astrojs/vercel": "^8.2.6",
     "@tailwindcss/vite": "^4.1.12",
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.8",
