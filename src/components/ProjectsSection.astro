@@ -1,0 +1,140 @@
+---
+import ProjectsIcon from "@icons/ProjectsIcon.astro";
+import NextIcon from "@icons/NextIcon.astro";
+import AstroIcon from "@icons/AstroIcon.astro";
+import ReactIcon from "@icons/ReactIcon.astro";
+import TypescriptIcon from "@icons/TypescriptIcon.astro";
+import NodeIcon from "@icons/NodeIcon.astro";
+import SQLIcon from "@icons/SqlIcon.astro";
+import TailwindIcon from "@icons/TailwindIcon.astro";
+import LinkIcon from "@icons/LinkIcon.astro";
+import GithubIcon from "@icons/GithubIcon.astro";
+import EyeIcon from "@icons/EyeIcon.astro";
+import SectionContainer from "./SectionContainer.astro";
+
+const TAGS = {
+  ASTRO: {
+    name: "Astro",
+    icon: AstroIcon,
+  },
+  REACT: {
+    name: "React.js",
+    icon: ReactIcon,
+  },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    icon: TypescriptIcon,
+  },
+  NODEJS: {
+    name: "Node.js",
+    icon: NodeIcon,
+  },
+  SQL: {
+    name: "PostgreSQL",
+    icon: SQLIcon,
+  },
+  TAILWIND: {
+    name: "TailwindCSS",
+    icon: TailwindIcon,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Ferretería Bonilla – Reclutamiento Inteligente",
+    description:
+      "Plataforma de selección de personal que utiliza inteligencia artificial para analizar CVs y un Chatbot interactivo para guiar a los candidatos, optimizando el proceso de contratación y mejorando la experiencia del usuario. En este proyecto trabajé como FullStack Developer, implementando tanto la lógica del frontend con React y Tailwind como la integración con APIs de análisis de CV basadas en IA.",
+    link: null,
+    github: "https://github.com/cris-rod96/ferreteria-bonilla-lm-client",
+    image: "/images/ferreteria-bonilla-client.png",
+    tags: [TAGS.REACT, TAGS.TAILWIND],
+  },
+  {
+    title: "Tykkera – Gestión de Tickets Simplificada",
+    description:
+      "Plataforma que facilita la administración de tickets de mesa de ayuda para empresas de reparación y mantenimiento de equipos tecnológicos, simplificando procesos complejos y mejorando la eficiencia operativa. Formé parte del equipo de backend, trabajando en la implementación de APIs, manejo de bases de datos y optimización de la lógica de tickets para garantizar rapidez y fiabilidad en la plataforma.",
+    link: "https://front-tikkerly.vercel.app/",
+    github: "https://github.com/Tikkerly/Front-Tikkerly",
+    image: "/images/tykkera.png",
+    tags: [TAGS.REACT, TAGS.TAILWIND],
+  },
+];
+---
+
+<SectionContainer title="Proyectos" href="/projects">
+  <div class="grid md:grid-cols-2 grid-cols-1 gap-3">
+    {
+      PROJECTS.map((project) => {
+        const { title, description, github, image, link, tags } = project;
+        return (
+          <article class="rounded-md border border-gray-500/20 flex flex-col overflow-hidden group hover:shadow-2xs hover:shadow-gray-500/20 transition-all duration-300">
+            <header class="w-full h-[250px] relative">
+              <img
+                src={image}
+                alt={`Imagen del proyecto: ${title}`}
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-300"
+              />
+            </header>
+
+            <div class="px-5 py-3">
+              <h3 class="text-white font-bold text-lg">{title}</h3>
+              {/* Techs */}
+              <div class="flex items-center gap-2 mt-5">
+                {tags.map((tag) => {
+                  const { icon: Icon, name } = tag;
+                  return (
+                    <span class="flex items-center gap-2 px-5 py-1 rounded-md bg-gray-500/20 text-white border border-gray-500/20 text-sm">
+                      <Icon />
+                      {name}
+                    </span>
+                  );
+                })}
+              </div>
+              {/* Descripción del proyecto */}
+              <p class="mt-5 text-gray-400 font-light ">
+                {description.length > 200
+                  ? description.slice(0, 200) + "..."
+                  : description}
+              </p>
+
+              {/* Links */}
+              <div class="flex mt-10 items-center gap-2">
+                {link && (
+                  <a
+                    href={link}
+                    target="_blank"
+                    class="flex items-center px-3 py-1 bg-gray-500/10 text-gray-400 hover:text-white transition-all duration-300 cursor-pointer gap-1 border border-gray-500/20 rounded-md"
+                    rel="noopener noreferrer"
+                  >
+                    <LinkIcon />
+                    Preview
+                  </a>
+                )}
+                {github && (
+                  <a
+                    href={github}
+                    target="_blank"
+                    class="flex items-center px-3 py-1 bg-gray-500/10 text-gray-400 hover:text-white transition-all duration-300 cursor-pointer gap-1 border border-gray-500/20 rounded-md"
+                    rel="noopener noreferrer"
+                  >
+                    <GithubIcon />
+                    Código
+                  </a>
+                )}
+
+                <a
+                  href="/projects/1"
+                  class="flex items-center px-3 py-1 bg-gray-500/10 text-gray-400 hover:text-white transition-all duration-300 cursor-pointer gap-1 border border-gray-500/20 rounded-md"
+                  rel="noopener noreferrer"
+                >
+                  <EyeIcon />
+                  Ver más
+                </a>
+              </div>
+            </div>
+          </article>
+        );
+      })
+    }
+  </div>
+</SectionContainer>
