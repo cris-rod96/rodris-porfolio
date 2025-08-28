@@ -2,4 +2,47 @@
 import SectionContainer from "./SectionContainer.astro";
 ---
 
-<SectionContainer title="Acerca de mí" href="/about" />
+<SectionContainer title="Sobre mí" href="/about">
+  <div class="grid grid-cols-3 gap-1">
+    <!-- Left -->
+    <div
+      class="col-span-2 flex flex-col gap-2 leading-relaxed text-pretty text-[19px] [&>p>span]:font-normal [&>p>span]:text-[#8914dc] text-gray-400"
+    >
+      <p>
+        Soy <span>Cristhian Rodríguez</span> aunque mis amigos me dicen <span
+          >rodris</span
+        >. Soy <span>Ingeniero en Sistemas</span> & <span
+          >FullStack Developer</span
+        >.
+      </p>
+
+      <p>
+        Durante mi <span>tesis</span> desarrollé una <span
+          >app móvil de gamificación</span
+        > para <span>enseñar programación</span>, implementada en la <span
+          >Universidad Técnica de Cotopaxi</span
+        >, que apoyó a docentes y estudiantes en su proceso de aprendizaje.
+      </p>
+      <p>
+        Además, he trabajado como <span>freelancer</span> en <span
+          >proyectos web</span
+        > & <span>móviles</span>, especializándome en llevar <span
+          >diseños e ideas a productos funcionales</span
+        >. Me motiva seguir creando <span>soluciones</span> que conecten con las
+        personas y generen <span>impacto real</span>.
+      </p>
+    </div>
+
+    <div class="h-auto px-10 flex justify-center items-center">
+      <picture
+        class="w-64 h-auto relative overflow-hidden border-10 border-double border-gray-500/20 rounded-lg rotate-3 aspect-square"
+      >
+        <img
+          src="/images/rodris.jpeg"
+          alt=""
+          class="w-full h-full object-cover absolute"
+        />
+      </picture>
+    </div>
+  </div>
+</SectionContainer>
