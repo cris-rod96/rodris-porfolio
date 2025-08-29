@@ -8,7 +8,8 @@ import { PROJECTS } from "@data/index";
   <div class="grid md:grid-cols-2 grid-cols-1 gap-3">
     {
       PROJECTS.slice(0, 2).map((project) => {
-        const { title, description, github, image, link, tags } = project;
+        const { title, description, github, image, link, tags, status } =
+          project;
         return (
           <ProjectCard
             title={title}
@@ -17,6 +18,7 @@ import { PROJECTS } from "@data/index";
             image={image}
             link={link}
             tags={tags}
+            status={status}
           />
         );
       })

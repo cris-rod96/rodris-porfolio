@@ -48,7 +48,7 @@ export const PROJECTS = [
     tags: [TAGS.REACT, TAGS.TAILWIND],
     platform: "Web",
     category: "Profesional",
-    status: "Completado"
+    status: true
   },
   {
     title: "Tykkera – Gestión de Tickets Simplificada",
@@ -60,7 +60,7 @@ export const PROJECTS = [
     tags: [TAGS.REACT, TAGS.TAILWIND],
     platform: "Web",
     category: "Profesional",
-    status: "Completado"
+    status: true
   },
   {
     title: "ShoeKingdom – Tienda Online de Zapatillas",
@@ -72,7 +72,7 @@ export const PROJECTS = [
     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.NODEJS, TAGS.SQL],
     platform: "Web",
     category: "Profesional",
-    status: "Completado"
+    status: true
 
   },
   {
@@ -85,7 +85,7 @@ export const PROJECTS = [
     tags: [TAGS.REACTNATIVE, TAGS.NODEJS, TAGS.SQL],
     platform: "Móvil",
     category: "Académico",
-    status: "Completado"
+    status: true
 
   }, {
     title: "Mega System – Gestión de Ventas con BI",
@@ -97,7 +97,7 @@ export const PROJECTS = [
     tags: [TAGS.REACT, TAGS.NODEJS, TAGS.SQL],
     platform: "Móvil",
     category: "Profesional",
-    status: "Completado"
+    status: true
 
   },
   {
@@ -106,11 +106,11 @@ export const PROJECTS = [
       "Aplicación web diseñada para facilitar la organización de sorteos de amigo secreto entre grupos de amigos o familiares. Los usuarios pueden registrarse, crear una sala y compartir un código único para invitar participantes. Es posible definir una fecha y hora límite para registrarse, momento en el que el sistema realiza automáticamente el sorteo y notifica a cada participante por correo electrónico. Además, los usuarios pueden añadir sus gustos y deseos para que el regalo sea más acertado y pueden indicar personas con las que no desean ser emparejados, evitando conflictos. En este proyecto trabajé como FullStack Developer utilizando React, Node.js y PostgreSQL para garantizar una experiencia fluida y segura.",
     link: null,
     github: "https://github.com/usuario/amigo-secreto", // reemplaza con tu repositorio real
-    image: null, // reemplaza con la imagen que uses
+    image: "/images/amigo-secreto.png", // reemplaza con la imagen que uses
     tags: [TAGS.REACT, TAGS.NODEJS, TAGS.SQL, TAGS.TYPESCRIPT],
     platform: "Web",
     category: "Personal",
-    status: "En proceso"
+    status: false
 
   }, {
     title: "Portfolio – Presentación de Proyectos",
@@ -121,7 +121,7 @@ export const PROJECTS = [
     tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.TYPESCRIPT],
     platform: "Web",
     category: "Personal",
-    status: "En proceso"
+    status: false
   }
 
 ];
