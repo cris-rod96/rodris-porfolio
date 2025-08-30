@@ -1,8 +1,8 @@
 ---
 import ProjectCard from "@components/ProjectCard.astro";
+import ProjectMovil from "@components/ProjectMovil.astro";
 import { PROJECTS } from "@data/index";
 import Layout from "@layouts/Layout.astro";
-import { promise } from "astro:schema";
 
 const webProjects = PROJECTS.filter(
   (project) => project.platform === "Web" && project.category === "Profesional"
@@ -39,14 +39,14 @@ console.log(personalProjects);
               link={project.link}
               tags={project.tags}
               status={project.status}
+              category={project.category}
             />
           ))
       }
     </div>
-    <!-- Proyectos Movil -->
-    <!-- Proyectos Personales -->
   </section>
 
+  <!-- Proyectos Movil -->
   <section class="flex flex-col gap-3 py-10 mb-10">
     <h2
       class="flex items-center gap-2 text-2xl mb-10 font-bold [&>span]:text-primary"
@@ -57,6 +57,34 @@ console.log(personalProjects);
       {
         mobileProjects.length > 0 &&
           mobileProjects.map((project) => (
+            <ProjectMovil
+              title={project.title}
+              description={project.description}
+              github={project.github}
+              image={project.image}
+              link={project.link}
+              tags={project.tags}
+              status={project.status}
+              category={project.category}
+            />
+          ))
+      }
+    </div>
+    <!-- Proyectos Movil -->
+    <!-- Proyectos Personales -->
+  </section>
+  <!-- Proyectos Personales -->
+  <section class="flex flex-col gap-3 py-10 mb-10">
+    <h2
+      class="flex items-center gap-2 text-2xl mb-10 font-bold [&>span]:text-primary"
+    >
+      <span>#</span> Proyectos personales
+    </h2>
+
+    <div class="grid md:grid-cols-2 grid-cols-1 gap-3">
+      {
+        personalProjects.length > 0 &&
+          personalProjects.map((project) => (
             <ProjectCard
               title={project.title}
               description={project.description}
@@ -65,11 +93,10 @@ console.log(personalProjects);
               link={project.link}
               tags={project.tags}
               status={project.status}
+              category={project.category}
             />
           ))
       }
     </div>
-    <!-- Proyectos Movil -->
-    <!-- Proyectos Personales -->
   </section>
 </Layout>

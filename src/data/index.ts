@@ -93,7 +93,7 @@ export const PROJECTS = [
       "Aplicación móvil desarrollada en React Native para la gestión integral de la información de ventas de Mega System. La app integra herramientas de Business Intelligence (BI) que permiten a los usuarios analizar datos, optimizar la toma de decisiones y mejorar la eficiencia operativa. En este proyecto trabajé como FullStack Developer, implementando el frontend con React Native, conectando APIs en Node.js y gestionando bases de datos PostgreSQL para asegurar un flujo de información confiable y ágil.",
     link: null,
     github: "https://github.com/usuario/mega-system", // reemplaza con el repositorio real
-    image: "/images/mega-system.png", // reemplaza con la imagen real
+    image: "/images/msbi.png", // reemplaza con la imagen real
     tags: [TAGS.REACT, TAGS.NODEJS, TAGS.SQL],
     platform: "Móvil",
     category: "Profesional",
@@ -101,18 +101,6 @@ export const PROJECTS = [
 
   },
   {
-    title: "Amigo Secreto – Organización de Sorteos Online",
-    description:
-      "Aplicación web diseñada para facilitar la organización de sorteos de amigo secreto entre grupos de amigos o familiares. Los usuarios pueden registrarse, crear una sala y compartir un código único para invitar participantes. Es posible definir una fecha y hora límite para registrarse, momento en el que el sistema realiza automáticamente el sorteo y notifica a cada participante por correo electrónico. Además, los usuarios pueden añadir sus gustos y deseos para que el regalo sea más acertado y pueden indicar personas con las que no desean ser emparejados, evitando conflictos. En este proyecto trabajé como FullStack Developer utilizando React, Node.js y PostgreSQL para garantizar una experiencia fluida y segura.",
-    link: null,
-    github: "https://github.com/usuario/amigo-secreto", // reemplaza con tu repositorio real
-    image: "/images/amigo-secreto.png", // reemplaza con la imagen que uses
-    tags: [TAGS.REACT, TAGS.NODEJS, TAGS.SQL, TAGS.TYPESCRIPT],
-    platform: "Web",
-    category: "Personal",
-    status: false
-
-  }, {
     title: "Portfolio – Presentación de Proyectos",
     description: "Mi portfolio personal donde muestro mis proyectos web y móviles desarrollados en React, React Native, Node.js y otras tecnologías. Incluye proyectos académicos, freelance y personales.",
     link: "https://rodris-porfolio.vercel.app/",
@@ -121,8 +109,21 @@ export const PROJECTS = [
     tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.TYPESCRIPT],
     platform: "Web",
     category: "Personal",
+    status: true
+  },
+  {
+    title: "GiftShuffle – Organización de Sorteos Online",
+    description:
+      "Aplicación web para organizar sorteos de amigo secreto. Permite crear salas, invitar participantes con un código, fijar fecha límite y realizar el sorteo automático con notificaciones por correo. Los usuarios pueden añadir preferencias, restricciones de emparejamiento y gestionar todo de forma segura. Desarrollada con React, Node.js y PostgreSQL.",
+    link: null,
+    github: "https://github.com/cris-rod66/giftshuffle-client.git", // reemplaza con tu repositorio real
+    image: "/images/default-project.jpg", // reemplaza con la imagen que uses
+    tags: [TAGS.REACT, TAGS.NODEJS, TAGS.SQL, TAGS.TYPESCRIPT],
+    platform: "Web",
+    category: "Personal",
     status: false
-  }
+
+  },
 
 ];
 
